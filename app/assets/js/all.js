@@ -1,5 +1,7 @@
 console.log('Hello!');
 
 $(document).ready(() => {
-  console.log('HesSchool Hello!');
+  $('#menu-mobile-btn').click(() => {
+    $('#menu-mobile').toggleClass('d-none');
+  })
 });
