@@ -47,6 +47,8 @@ $fontsizes: (
 
 $magic-height: (
   "48": 48px,
+  "396": 396px,
+  "787": 787px
 );
 
 @mixin media-break-point-up($breakName) {
@@ -65,7 +67,10 @@ body {
 }
 
 h1 {
-  font-size: 64px;
+  font-size: 24px;
+  @include media-break-point-up("md") {
+    font-size: 64px;
+  }
   font-weight: 900;
 }
 
@@ -93,7 +98,7 @@ figure {
   margin: 0;
 }
 
-button {
+input, button {
   background-color: transparent ;
   outline: 0;
   border: 0;
@@ -130,8 +135,13 @@ button {
   flex-direction: column;
 }
 
-.justify-content-center {
-  justify-content: center;
+.justify-content {
+  &-center {
+    justify-content: center;
+  }
+  &-end {
+    justify-content: end;
+  }
 }
 
 .justify-content-between {
@@ -157,6 +167,9 @@ button {
   &-small {
     font-size: 20px;
     line-height: 1.5;
+  }
+  &-right {
+    text-align: right;
   }
 }
 
@@ -210,10 +223,12 @@ button {
     margin-right: ($pixel_base * $value);
   }
   .py-#{$name} {
-    padding: ($pixel_base * $value) 0;
+    padding-top: ($pixel_base * $value) ;
+    padding-bottom: ($pixel_base * $value);
   }
   .px-#{$name} {
-    padding: 0 ($pixel_base * $value);
+    padding-left: ($pixel_base * $value) ;
+    padding-right: ($pixel_base * $value);
   }
   .pl-#{$name} {
     padding-left: ($pixel_base * $value);
@@ -294,6 +309,20 @@ button {
       }
     }
   }
+  @each $heightName, $heightValue in $magic-height {
+    .magic-height-#{$name}-#{$heightName} {
+      @include media-break-point-up($name) {
+        height: $heightValue ;
+      }
+    }
+  }
+  @each $fontsizesName, $fontsizesValue in $fontsizes {
+    .fz-#{$name}-#{$fontsizesName} {
+      @include media-break-point-up($name) {
+        font-size: $fontsizesValue !important;
+      }
+    }
+  }
 }
 
 .banner {
@@ -301,6 +330,10 @@ button {
   background-size: cover;
   position: center;
   background-repeat: no-repeat;
+  height: 396px;
+  @include media-break-point-up("md") {
+    height: 787px;
+  }
 }
 
 .main {
