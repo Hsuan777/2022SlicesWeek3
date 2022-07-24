@@ -25,6 +25,8 @@ $space: (
 );
 
 $percent: (
+  "3": 3%,
+  "6": 6%,
   "24": 24%,
   "48": 48%,
   "50": 50%,
@@ -44,7 +46,9 @@ $colors: (
   "primary-dark":  #650300,
   "secondary":#FBF2F2,
   "white":    #ffffff,
-  "black":    #000000
+  "black":    #000000,
+  "grey":     #dfdbdb,
+  "grey-dark":#707070,
 );
 
 $fontsizes: (
@@ -60,10 +64,12 @@ $magic-height: (
   "40": 40px,
   "48": 48px,
   "100": 100px,
+  "306": 306px,
   "336": 336px,
   "348": 348px,
   "396": 396px,
   "416": 416px,
+  "511": 511px,
   "787": 787px
 );
 
@@ -172,6 +178,14 @@ input, button {
   align-items: center;
 }
 
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
 .mx-auto {
   margin: 0 auto;
 }
@@ -217,14 +231,19 @@ input, button {
   &-bottom {
     border-bottom: 1px solid #000;
   }
+  &-right {
+    border-right: 1px solid #000;
+  }
+  &-left-0 {
+    border-left: 0;
+  }
+  &-right-0 {
+    border-right: 0;
+  }
 }
 
-.border-left-0 {
-  border-left: 0;
-}
-
-.border-right-0 {
-  border-right: 0;
+.shadow {
+  box-shadow: 0px 2px 6px #00000029;
 }
 
 .object-fit-cover {
@@ -235,6 +254,16 @@ input, button {
   .w-#{$name} {
     width: $value;
   }
+  .h-#{$name} {
+    height: $value;
+  }
+  .left-#{$name} {
+    left: $value;
+  }
+  .bottom-#{$name} {
+    bottom: $value;
+  }
+
 }
 
 @each $name, $value in $space {
@@ -253,6 +282,9 @@ input, button {
   }
   .mr-#{$name} {
     margin-right: ($pixel_base * $value);
+  }
+  .p-#{$name} {
+    padding: ($pixel_base * $value);
   }
   .py-#{$name} {
     padding-top: ($pixel_base * $value) ;
@@ -273,21 +305,6 @@ input, button {
   }
   .border-#{$name} {
     border-width: ($border_base * $value);
-  }
-}
-
-@each $name, $value in $colors {
-  .border-#{$name} {
-    border-color: $value;
-  }
-  .text-#{$name} {
-    color: $value;
-    &::after {
-      background-color: #ffffff;
-    }
-  }
-  .bg-#{$name} {
-    background-color: $value;
   }
 }
 
@@ -327,6 +344,13 @@ input, button {
   .ml-#{$name}-auto {
     @include media-break-point-up($name) {
       margin-left: auto;
+    }
+  }
+  .border-#{$name} {
+    &-right {
+      @include media-break-point-up($name) {
+        border-right: 1px solid #000;
+      }
     }
   }
   @each $spaceName, $spaceValue in $space {
@@ -411,6 +435,21 @@ input, button {
         // heighxt: 608px;
       }
     }
+  }
+}
+
+@each $name, $value in $colors {
+  .border-#{$name} {
+    border-color: $value;
+  }
+  .text-#{$name} {
+    color: $value;
+    &::after {
+      background-color: #ffffff;
+    }
+  }
+  .bg-#{$name} {
+    background-color: $value;
   }
 }
 
