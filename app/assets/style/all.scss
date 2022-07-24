@@ -46,6 +46,8 @@ $fontsizes: (
 );
 
 $magic-height: (
+  "24": 24px,
+  "40": 40px,
   "48": 48px,
   "396": 396px,
   "787": 787px
@@ -306,6 +308,11 @@ input, button {
     .pb-#{$name}-#{$spaceName} {
       @include media-break-point-up($name) {
         padding-bottom: ($pixel_base * $spaceValue);
+      }
+    }
+    .mr-#{$name}-#{$spaceName} {
+      @include media-break-point-up($name) {
+        margin-right: ($pixel_base * $spaceValue);
       }
     }
   }
