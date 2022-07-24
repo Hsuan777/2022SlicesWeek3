@@ -1,0 +1,89 @@
+@each $name, $value in $breakpoints {
+  .d-#{$name}-flex {
+    @include media-break-point-up($name) {
+      display: flex;
+    }
+  }
+  .flex-#{$name}-row {
+    @include media-break-point-up($name) {
+      flex-direction: row;
+    }
+  }
+  .d-#{$name}-none {
+    @include media-break-point-up($name) {
+      display: none;
+    }
+  }
+  .d-#{$name}-block {
+    @include media-break-point-up($name) {
+      display: block;
+    }
+  }
+  .ml-#{$name}-auto {
+    @include media-break-point-up($name) {
+      margin-left: auto;
+    }
+  }
+  .border-#{$name} {
+    &-right {
+      @include media-break-point-up($name) {
+        border-right: 1px solid #000;
+      }
+    }
+  }
+  @each $spaceName, $spaceValue in $space {
+    .py-#{$name}-#{$spaceName} {
+      @include media-break-point-up($name) {
+        padding-top: ($pixel_base * $spaceValue);
+        padding-bottom: ($pixel_base * $spaceValue);
+      }
+    }
+    .pt-#{$name}-#{$spaceName} {
+      @include media-break-point-up($name) {
+        padding-top: ($pixel_base * $spaceValue);
+      }
+    }
+    .pb-#{$name}-#{$spaceName} {
+      @include media-break-point-up($name) {
+        padding-bottom: ($pixel_base * $spaceValue);
+      }
+    }
+    .mr-#{$name}-#{$spaceName} {
+      @include media-break-point-up($name) {
+        margin-right: ($pixel_base * $spaceValue);
+      }
+    }
+    .mx-#{$name}-#{$spaceName} {
+      @include media-break-point-up($name) {
+        margin-left: ($pixel_base * $spaceValue);
+        margin-right: ($pixel_base * $spaceValue);
+      }
+    }
+    .mb-#{$name}-#{$spaceName} {
+      @include media-break-point-up($name) {
+        margin-bottom: ($pixel_base * $spaceValue);
+      }
+    }
+  }
+  @each $heightName, $heightValue in $magic-height {
+    .magic-height-#{$name}-#{$heightName} {
+      @include media-break-point-up($name) {
+        height: $heightValue ;
+      }
+    }
+  }
+  @each $fontsizesName, $fontsizesValue in $fontsizes {
+    .fz-#{$name}-#{$fontsizesName} {
+      @include media-break-point-up($name) {
+        font-size: $fontsizesValue !important;
+      }
+    }
+  }
+  @each $percentName, $percentValue in $percent {
+    .w-#{$name}-#{$percentName} {
+      @include media-break-point-up($name) {
+        width: $percentValue;
+      }
+    }
+  }
+}

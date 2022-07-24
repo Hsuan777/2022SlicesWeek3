@@ -1,0 +1,18 @@
+.container {
+  max-width: 1368px;
+  width: 100%;
+  margin: 0 auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  @include media-break-point-up("md") {
+    padding-right: 36px;
+    padding-left: 36px;
+  }
+}
+
+.main {
+  min-height: calc(100vh - 232px);
+  @include media-break-point-up("md") {
+    min-height: calc(100vh - 353px);
+  }
+}
