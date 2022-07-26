@@ -14,11 +14,16 @@
     text-align-last: left;
   }
   &-small {
-    font-size: 20px;
-    line-height: 1.5;
+    font-size: 12px;
   }
   &-right {
     text-align: right;
+  }
+  &-italic {
+    font-style: italic;
+  }
+  &- {
+
   }
 }
 
@@ -32,10 +37,6 @@
   &-black {
     font-weight: 900;
   }
-}
-
-.text-italic {
-  font-style: italic;
 }
 
 .border {

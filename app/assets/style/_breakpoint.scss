@@ -31,6 +31,11 @@
       }
     }
   }
+  .text-#{$name}-normal {
+    @include media-break-point-up($name) {
+      font-size: 16px;
+    }
+  }
   @each $spaceName, $spaceValue in $space {
     .py-#{$name}-#{$spaceName} {
       @include media-break-point-up($name) {
