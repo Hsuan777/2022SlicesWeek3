@@ -1262,7 +1262,7 @@ input, button {
     display: flex; } }
 
 @media (min-width: 375px) {
-  .flex-xsm-row {
+  .d-xsm-flex-row {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -1957,7 +1957,7 @@ input, button {
     display: flex; } }
 
 @media (min-width: 414px) {
-  .flex-sm-row {
+  .d-sm-flex-row {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -2652,7 +2652,7 @@ input, button {
     display: flex; } }
 
 @media (min-width: 768px) {
-  .flex-md-row {
+  .d-md-flex-row {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -3347,7 +3347,7 @@ input, button {
     display: flex; } }
 
 @media (min-width: 960px) {
-  .flex-lg-row {
+  .d-lg-flex-row {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -4042,7 +4042,7 @@ input, button {
     display: flex; } }
 
 @media (min-width: 1200px) {
-  .flex-xl-row {
+  .d-xl-flex-row {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -4737,7 +4737,7 @@ input, button {
     display: flex; } }
 
 @media (min-width: 1400px) {
-  .flex-xxl-row {
+  .d-xxl-flex-row {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
