@@ -4,7 +4,7 @@
       display: flex;
     }
   }
-  .flex-#{$name}-row {
+  .d-#{$name}-flex-row {
     @include media-break-point-up($name) {
       flex-direction: row;
     }
